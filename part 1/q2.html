@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Find *all* maximum occuring character in string 
+    const str = "this is javascript code and you have to find the maximum char"
+
+    function findMaxChar(str) {
+        let obj = {}
+        let maxVal = 1
+        let arr = []
+
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== ' ') {
+                if (obj.hasOwnProperty(str[i])) {
+                    obj[str[i]] = obj[str[i]] + 1
+                }
+                else {
+                    obj[str[i]] = 1
+                }
+            }
+        }
+
+        for (const item in obj) {
+            if (obj[item] > maxVal) {
+                maxVal = obj[item]
+            }
+        }
+
+        for (const item in obj) {
+            if (obj[item] === maxVal) {
+                arr.push(item)
+            }
+            
+        }
+        console.log(obj);
+        return arr
+    }
+
+    console.log(findMaxChar(str));
+</script>
+
+</html>

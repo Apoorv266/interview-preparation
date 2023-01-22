@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // find 2nd largest element in array
+    const input = [1, 2, -2, 11, 12, 6, 7, 1]
+
+    // first way
+    function scndLarg(arr) {
+        let newArr = arr.sort((a, b) => a - b);
+        let val = []
+        for (let i = 0; i < newArr.length; i++) {
+            if (!val.includes(newArr[i])) {
+                val.push(newArr[i])
+            }
+        }
+        return val[val.length - 2]
+    }
+
+    console.log(scndLarg(input))
+
+    //second way
+    function secondLarg(arr) {
+        let newArr = arr.sort((a, b) => a - b);
+        let res = newArr[newArr.length - 1]
+        let count = 0
+        for (let i = newArr.length - 2; i >= 0; i--) {
+
+            count++
+            if (res != arr[i]) {
+                res = arr[i]
+                break
+            }
+
+        }
+        console.log(count);
+        return res
+    }
+
+    // third way
+    function thirdFunc(arr) {
+        
+    }
+
+    console.log(input);
+    console.log(secondLarg(input));
+</script>
+
+</html>

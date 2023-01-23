@@ -13,9 +13,12 @@
 </body>
 <script>
     // find 2nd largest element in array
-    const input = [1, 2, -2, 11, 12, 6, 7, 1]
-
+    const input = [-1, 7, 1, 34, 18]
+    console.log(input)
     // first way
+    // sort array
+    // remove all duplicates from array
+    //return second last element
     function scndLarg(arr) {
         let newArr = arr.sort((a, b) => a - b);
         let val = []
@@ -30,30 +33,63 @@
     console.log(scndLarg(input))
 
     //second way
+    // sort the array 
+    // store largest item in res
+    // loop from the backside of array
+    // get First item that is not equal to largest element and store it in res which will be second largest element
+    // return res
     function secondLarg(arr) {
         let newArr = arr.sort((a, b) => a - b);
         let res = newArr[newArr.length - 1]
-        let count = 0
         for (let i = newArr.length - 2; i >= 0; i--) {
-
-            count++
             if (res != arr[i]) {
                 res = arr[i]
                 break
             }
-
         }
-        console.log(count);
         return res
     }
+    console.log(secondLarg(input));
 
     // third way
-    function thirdFunc(arr ) {
-        
+    //First find the maximum value in the array
+    // loop array from backwards
+    // remove all the items from back that are equal to largest element
+    // return largest element in new array which is the second largest element
+    function thirdFunc(arr) {
+        let max = Math.max(...arr)
+        for (let i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] === max) {
+                let index = arr.indexOf(max)
+                if (index > -1) {
+                    arr.splice(index, 1)
+                }
+            }
+        }
+        var secondHigh = Math.max(...arr)
+        return secondHigh
     }
 
-    console.log(input);
-    console.log(secondLarg(input));
+    console.log(thirdFunc(input))
+
+
+    // forth way
+    function findSecondLargestElem(arr) {
+        let first = -1, second = -1;
+
+        for (let i = 0; i <= arr.length - 1; i++) {
+            if (arr[i] > first) {
+                second = first;
+                first = arr[i];
+            }
+            if (arr[i] > second && arr[i] != first) {
+                second = arr[i];
+            }
+        }
+        return second;
+    }
+
+    console.log(findSecondLargestElem(input))
 </script>
 
 </html>

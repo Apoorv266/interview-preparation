@@ -13,7 +13,7 @@
 </body>
 <script>
     // find 2nd largest element in array
-    const input = [-1, 7, 1, 34, 18]
+    const input = [1, 2,3, 4, 9, 6, 8,7, 5]
     console.log(input)
     // first way
     // sort array
@@ -75,18 +75,19 @@
 
     // fourth way
     function findSecondLargestElem(arr) {
-        let first = -1, second = -1;
+        let largestNum = -321
+       let secondlargestnum = -321
 
-        for (let i = 0; i <= arr.length - 1; i++) {
-            if (arr[i] > first) {
-                second = first;
-                first = arr[i];
+        for (let i = 0; i < arr.length ; i++) {
+            if (arr[i] > largestNum) {
+                secondlargestnum = largestNum;
+                largestNum = arr[i];
             }
-            if (arr[i] > second && arr[i] != first) {
-                second = arr[i];
+             if (arr[i] > secondlargestnum ) {
+                secondlargestnum = arr[i];
             }
         }
-        return second;
+        return secondlargestnum;
     }
 
     console.log(findSecondLargestElem(input))

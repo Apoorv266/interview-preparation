@@ -13,7 +13,7 @@
 </body>
 <script>
     // find 2nd largest element in array
-    const input = [1, 2,3, 4, 9, 6, 8,7, 5]
+    const input = [66, 66, 34, 5, 2]
     console.log(input)
     // first way
     // sort array
@@ -56,24 +56,26 @@
     // loop array from backwards
     // remove all the items from back that are equal to largest element
     // return largest element in new array which is the second largest element
-    function thirdFunc(arr) {
-        let max = Math.max(...arr)
-        for (let i = arr.length - 1; i >= 0; i--) {
-            if (arr[i] === max) {
-                let index = arr.indexOf(max)
-                if (index > -1) {
-                    arr.splice(index, 1)
-                }
-            }
-        }
-        var secondHigh = Math.max(...arr)
-        return secondHigh
-    }
 
-    console.log(thirdFunc(input))
+    // function thirdFunc(arr) {
+    //     let max = Math.max(...arr)
+    //     for (let i = arr.length - 1; i >= 0; i--) {
+    //         if (arr[i] === max) {
+    //             let index = arr.indexOf(max)
+    //             if (index > -1) {
+    //                 arr.splice(index, 1)
+    //             }
+    //         }
+    //     }
+    //     var secondHigh = Math.max(...arr)
+    //     return secondHigh
+    // }
+
+    // console.log(thirdFunc(input))
 
 
     // fourth way
+    // agar value largest h to store it in largestNum and from the remaining values , store the second largest value in secondlargestnum
     function findSecondLargestElem(arr) {
         let largestNum = -321
        let secondlargestnum = -321
@@ -83,14 +85,35 @@
                 secondlargestnum = largestNum;
                 largestNum = arr[i];
             }
-             if (arr[i] > secondlargestnum ) {
+            // first condition is to find the second largest element and second condition is to ignore duplicate largest elements
+             else if (arr[i] > secondlargestnum && arr[i] != largestNum) {
                 secondlargestnum = arr[i];
             }
         }
         return secondlargestnum;
     }
 
-    console.log(findSecondLargestElem(input))
+    console.log("value", findSecondLargestElem(input))
+
+
+    //fifth way (same as 4th but with forEach)
+    // [1, 10, 2, 9]
+    function secondElem(arr) {
+        let max = -1
+        let secMax = -1
+
+        arr.forEach((el) => {
+            if (el > max) {
+                secMax = max
+                max = el
+            } else if(el > secMax && el !== max) {
+                secMax = el
+            }
+        });
+        return secMax
+    }
+
+    console.log("value2",secondElem(input));
 </script>
 
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // rotate array to right by 2 places
+    // create a loop that will tell how many places to rotate
+    // store first value in temp variable
+    // loop over array and replace current element with the next element
+    // append first value at last of array
+
+    const input = [2, 7, 11, 4, -1]
+    // [7, 11, 4, -1, 2]
+
+    function rotateArr(arr) {
+        for (let i = 0; i < 1; i++) {
+            let temp = arr[0]
+
+            for (let j = 0; j < arr.length -1 ; j++) {
+                arr[j] = arr[j + 1]
+            }
+            arr[arr.length - 1] = temp
+        }
+        return arr
+    }
+
+    console.log(rotateArr(input));
+</script>
+</html>

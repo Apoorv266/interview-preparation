@@ -81,10 +81,12 @@
        let secondlargestnum = -321
 
         for (let i = 0; i < arr.length ; i++) {
+            // if largest element is not found out yet then 1st if will run
             if (arr[i] > largestNum) {
                 secondlargestnum = largestNum;
                 largestNum = arr[i];
             }
+            // if largest element has been already found then second if will run to find out the second largest
             // first condition is to find the second largest element and second condition is to ignore duplicate largest elements
              else if (arr[i] > secondlargestnum && arr[i] != largestNum) {
                 secondlargestnum = arr[i];

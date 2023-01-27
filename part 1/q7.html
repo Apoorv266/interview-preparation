@@ -11,8 +11,27 @@
 </body>
 <script>
     // First third largest element
-    const input = [66, 34, 5, 2, 20]
+    const input = [34, 66, 5, 2, 20]
 
-    console.log("hello");
+    function findThirdFunc(arr) {
+        let largest = -1000
+        let slargest = -1000
+        let tlargest = -1000
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                tlargest = slargest
+                slargest = largest
+                largest = arr[i]
+            }
+             else if(arr[i] > tlargest) {
+                tlargest = arr[i];
+             }
+            
+        }
+        return tlargest
+    }
+
+    console.log(findThirdFunc(input));
 </script>
 </html>

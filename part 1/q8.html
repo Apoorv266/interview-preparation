@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // check if string is palindrome or not
+    let x = ""
+
+    function CheckpalinFunc(val) {
+        let newVal = val.toLowerCase().replace(/[^a-z\d]/g, '');
+
+        if (val.length = 0) {
+            return false
+        }
+    
+        let start = 0
+        let end = newVal.length - 1
+
+        while (start < end) {
+            if (newVal[start] === newVal[end]) {
+                start++
+                end--
+            }
+            else if (newVal[start] !== newVal[end]) {
+                return false
+                break
+            }
+
+        }
+        return true
+    }
+
+    console.log(CheckpalinFunc(x));
+</script>
+
+</html>

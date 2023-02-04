@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Remove Duplicate characters from String
+
+    // first way
+    let text = "okok";
+    function removeDup(str) {
+        let newStr = ""
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== " " && !newStr.includes(str[i])) {
+                newStr += str[i]
+            }
+        }
+        return newStr
+    }
+    console.log(removeDup(text));
+
+    // second way
+    function removeDuplicateCharacters() {
+  var string='apoorv'
+  let result= string.split('').filter((item, index, arr)=> {
+      // items that are appearing for first time will have same indexOf and index
+      // indexOf return the index of first occurance
+               return arr.indexOf(item) == index;
+               }).join('');
+  return result;
+}
+console.log(removeDuplicateCharacters());
+
+</script>
+
+</html>

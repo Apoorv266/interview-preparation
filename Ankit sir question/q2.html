@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Remove Duplicate characters from array of element and find the count of an elements using set object
+    let arr = [55, 44, 55,67,67,67,67,8,8,8,8,8,65,1,2,3,3,34,5];
+    let uniqueVal = [...new Set(arr)]
+    console.log(uniqueVal.length);
+    console.log(uniqueVal);
+
+
+    // second way
+    function getUniqueVal(arr) {
+        let newArr = arr.filter((item , index, arr)=>{
+            return arr.indexOf(item) == index
+        })
+        console.log(newArr.length);
+        return newArr
+    }
+
+    console.log(getUniqueVal(arr));
+</script>
+</html>

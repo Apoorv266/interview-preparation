@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Swapping of 2 numbers with third variable
+    let a = 20
+    let b = 50
+    
+    function swapFunc(v, m) {
+        let a = v
+        let b = m
+        let temp
+        temp = b
+        b = a
+        a = temp
+        return `a: ${a} b: ${b}`
+    }
+    
+    console.log(swapFunc(a, b));
+</script>
+</html>

@@ -14,46 +14,44 @@
 <script>
     // anagram string
     var a = "anagram";
-    var b = "aagaram";
+    var b = "agnaram";
 
-    // function findanagram(v, k) {
-    //     let a = v.toLowerCase()
-    //     let b = k.toLowerCase()
-    //     let obj1 = {}
-    //     let obj2 = {}
+    function findanagram(v, k) {
+        let a = v.toLowerCase()
+        let b = k.toLowerCase()
+        let obj1 = {}
+        let obj2 = {}
 
-    //     if (a.length != b.length) {
-    //         return false
-    //     }
-    //     for (let i = 0; i < a.length; i++) {
-    //         if (obj1.hasOwnProperty(a[i])) {
-    //             obj1[a[i]] = obj1[a[i]] + 1
-    //         }
-    //         else {
-    //             obj1[a[i]] = 1
-    //         }
-    //     }
+        if (a.length != b.length) {
+            return false
+        }
+        for (let i = 0; i < a.length; i++) {
+            if (obj1.hasOwnProperty(a[i])) {
+                obj1[a[i]] = obj1[a[i]] + 1
+            }
+            else {
+                obj1[a[i]] = 1
+            }
+        }
 
-    //     for (let j = 0; j < b.length; j++) {
-    //         if (obj2.hasOwnProperty(b[j])) {
-    //             obj2[b[j]] = obj2[b[j]] + 1
-    //         }
-    //         else {
-    //             obj2[b[j]] = 1
-    //         }
-    //     }
-    //     console.log(obj1);
-    //     console.log(obj2);
+        for (let j = 0; j < b.length; j++) {
+            if (obj2.hasOwnProperty(b[j])) {
+                obj2[b[j]] = obj2[b[j]] + 1
+            }
+            else {
+                obj2[b[j]] = 1
+            }
+        }
 
-    //     for (const key in obj1) {
-    //         if (obj1[key] !== obj2[key]) {
-    //             return false
-    //         }
-    //     }
-    //     return true
-    // }
+        for (const key in obj1) {
+            if (obj1[key] !== obj2[key]) {
+                return false
+            }
+        }
+        return true
+    }
 
-    // console.log(findanagram(a, b))
+    console.log(findanagram(a, b))
 
 
     // second method
@@ -74,20 +72,23 @@
                 obj1[a[i]] = 1
             }
         }
-        // console.log("2", obj1);
+  
         for (let item of b) {
+    
+            // !obj1[item] return false if item value is 0 or item does not exist
             if (!obj1[item]) {
-                console.log("val", obj1, !obj1[item]);
                 return false
             }
             obj1[item] -= 1
-            
-            console.log("2", obj1, !obj1[item]);
         }
         return true
     }
 
-    console.log("second",anagram2(a, b))
+    console.log("second", anagram2(a, b))
+
+    let obj = {a: 0}
+    console.log(!obj["c"]);
+
 </script>
 
 </html>

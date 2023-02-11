@@ -59,11 +59,10 @@
         let a = v.toLowerCase()
         let b = k.toLowerCase()
         let obj1 = {}
-        let obj2 = {}
 
-        // if (a.length != b.length) {
-        //     return false
-        // }
+        if (a.length != b.length) {
+            return false
+        }
         for (let i = 0; i < a.length; i++) {
             if (obj1.hasOwnProperty(a[i])) {
                 obj1[a[i]] = obj1[a[i]] + 1
@@ -75,7 +74,7 @@
   
         for (let item of b) {
     
-            // !obj1[item] return false if item value is 0 or item does not exist
+            // !obj1[item] return true if item value is 0 or item does not exist
             if (!obj1[item]) {
                 return false
             }
@@ -87,7 +86,7 @@
     console.log("second", anagram2(a, b))
 
     let obj = {a: 0}
-    console.log(!obj["c"]);
+    console.log(!obj["a"]);
 
 </script>
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // To find longest word from a string using (for of Loop) means iterate by an elements not by indexing
+    let str = "let see if its working or not"
+    function findLongNum(str) {
+        let count = 0
+        let val 
+        for (const item of str.split(" ")) {
+            if (item.length > count) {
+                count = item.length
+                val = item
+            }
+        }
+        return val
+    }
+
+    console.log(findLongNum(str))
+</script>
+
+</html>

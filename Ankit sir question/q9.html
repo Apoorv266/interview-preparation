@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+<script>
+    //  Swapping of 2 numbers without third variable
+    let a = 2
+    let b = 3
+
+    function swapNum(a, b) {
+        let arr = [a, b]
+        return `a: ${arr[1]} b: ${arr[0]}`
+    }
+
+    console.log(swapNum(a, b));
+
+    // second way
+    let c = 10
+    let d = 20
+
+    c = c + d  // 30
+    d = c - d  // 30 - 20 = 10
+    c = c - d  // 30 - 10 = 20
+    console.log(c, d)
+</script>
+
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // To find a first pair from a number array whose sum is zero
+    
+    let arr = [-5,-4,-3,-2,-1,0,2,4,6,8]
+    function getZeroFunc(arr) {
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i; j < arr.length; j++) {
+                if (arr[i] + arr[j] === 0) {
+                    return [arr[i], arr[j]]
+                }
+            }
+        }
+        return arr2
+    }
+
+    console.log(getZeroFunc(arr))
+
+
+    // second approch
+    function getZeroFunc2(arr) {
+        let start = 0
+        let end = arr.length - 1
+        while (start < end) {
+            let sum = arr[start] + arr[end]
+            if (sum === 0) {
+                return [arr[start], arr[end]]
+            }
+            if (sum > 0) {
+                end--
+            }
+            else {
+                start++
+            }
+        }
+    }
+    // [-5,-4,-3,-2,-1,4,0,2,6,8]
+    console.log(getZeroFunc2(arr))
+
+
+    // function getSumPairZero(array) {
+    //     let left = 0;
+    //     let right = array.length - 1;
+    //     while (left < right) {
+    //         sum = array[left] + array[right]
+    //         if (sum === 0) {
+    //             return [array[left], array[right]]
+    //         } else if (sum > 0) {
+    //             right--;
+    //         } else {
+    //             left++;
+    //         }
+    //     }
+    // }
+    // const result = getSumPairZero(arr)
+    // console.log(result)
+</script>
+
+</html>

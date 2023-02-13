@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
 <script>
-      let array = ["go", "gosh", "google"]
+    let array = ["whish", "quash"]
 
-function findComString(array) {
-    var arr = array.sort()
-    console.log(arr);
-    console.log(arr[arr.length - 1].charAt(1))
-    var i = 0;
-    let startPoint = 0
-    let endPoint = 0
-    while (i < arr[0].length) {
-        if (arr[0].charAt(i) === arr[arr.length - 1].charAt(i)) {
-            startPoint = i
-        }
-        else if (arr[0].charAt(i) !== arr[arr.length - 1].charAt(i)) {
-            endPoint = i
-        }
-        i++;
+    const string1 = "whish";
+const string2 = "quash";
+
+const shortestString = string1.length <= string2.length ? string1 : string2;
+const longestString = string1.length > string2.length ? string1 : string2;
+console.log(shortestString,longestString );
+let maxLength = 0;
+let maxSubstring = '';
+
+for (let i = 0; i < shortestString.length; i++) {
+  for (let j = i + 1; j <= shortestString.length; j++) {
+    const substring = shortestString.substring(i, j);
+    if (longestString.includes(substring) && substring.length > maxLength) {
+      maxLength = substring.length;
+      maxSubstring = substring;
     }
-    return arr[0].substring(startPoint,endPoint)
-
+  }
 }
-console.log(findComString(array))
+
+console.log(maxSubstring);
+// Output: "sh"
 </script>
+
 </html>

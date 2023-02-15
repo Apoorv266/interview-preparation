@@ -13,8 +13,9 @@
 </body>
 <script>
     // To find a first pair from a number array whose sum is zero
-    
+
     let arr = [-5,-4,-3,-2,-1,0,2,4,6,8]
+
     function getZeroFunc(arr) {
 
         for (let i = 0; i < arr.length; i++) {
@@ -50,23 +51,6 @@
     // [-5,-4,-3,-2,-1,4,0,2,6,8]
     console.log(getZeroFunc2(arr))
 
-
-    // function getSumPairZero(array) {
-    //     let left = 0;
-    //     let right = array.length - 1;
-    //     while (left < right) {
-    //         sum = array[left] + array[right]
-    //         if (sum === 0) {
-    //             return [array[left], array[right]]
-    //         } else if (sum > 0) {
-    //             right--;
-    //         } else {
-    //             left++;
-    //         }
-    //     }
-    // }
-    // const result = getSumPairZero(arr)
-    // console.log(result)
 </script>
 
 </html>

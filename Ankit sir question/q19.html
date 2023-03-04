@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // To find sum of the largest pair of the 2 elements using indexing with unsorted elements
+
+    // let array = [5, 2, 9, 10, 4, 7]
+    // let newArr = array.sort((a, b) => b - a);
+    // console.log(newArr[0] + newArr[1])
+
+
+
+    function sumOfLargestPair(arr) {
+  // initialize two variables to store the two largest elements in the array
+  let largest1 = -Infinity;
+  let largest2 = -Infinity;
+
+  // loop through the array starting from the third element
+  for (let i = 0; i < arr.length; i++) {
+    // if the current element is larger than both largest1 and largest2,
+    // update largest1 and largest2 accordingly
+    if (arr[i] > largest1) {
+      largest2 = largest1;
+      largest1 = arr[i];
+    } else if (arr[i] > largest2) {
+      largest2 = arr[i];
+    }
+  }
+
+  // return the sum of the two largest elements
+  return [largest1, largest2];
+}
+
+// example usage
+const arr = [20, 1 ,4, 14, 4, 16];
+console.log(sumOfLargestPair(arr)); // outputs 19
+</script>
+</html>

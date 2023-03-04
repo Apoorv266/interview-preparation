@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Finding a missing elements in an array and then add with existing elements. (-1 means if elements not found then it will return always -1 as per rule)
+
+
+    function missingElement() {
+        var a = [1, 2, 5]
+        var missing = [];
+        for (var i = 1; i <= 6; i++) {
+            if (a.indexOf(i) == -1) {
+                missing.push(i);
+            }
+        }
+        console.log(missing) //missing array
+        console.log(a.concat(missing).sort()); //actual+missing elements
+    }
+    missingElement()
+</script>
+
+</html>

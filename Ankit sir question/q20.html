@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // find unique element in an array
+    let arr = [1, 2, 1, 2, 6, 6]
+
+    let val;
+
+    for (let i = 0; i < arr.length; i++) {
+        let isUnique = true;
+        for (let j = 0; j < arr.length; j++) {
+            if (i !== j && arr[i] === arr[j]) {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique) {
+            val = arr[i];
+        }
+    }
+
+    console.log(val); // Output: 5
+
+
+
+    // 2nd approach 
+    // [1, 2, 1, 2, 6, 6]
+    const uniqueVal = (arr) => {
+        let value = 0
+        for (let i = 0; i < arr.length; i++) {
+            let isUnique = true;
+            for (let j = 0; j < arr.length; j++) {
+                if (i !== j && arr[i] === arr[j]) {
+                    break;
+                } else {
+                    value = arr[i]
+                }
+            }
+
+        }
+        return value
+    }
+
+    console.log(uniqueVal(arr))
+
+</script>
+
+</html>
